@@ -9,6 +9,10 @@ gradle/gradle-*-all.zip
 *.iml
 local.properties
 
+# Local IDE workspace settings
+.metadata/
+.vscode/
+
 # macOS
 .DS_Store
 
