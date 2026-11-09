@@ -1,0 +1,27 @@
+package com.jaeho.backend.service;
+
+import org.springframework.stereotype.Service;
+
+import com.jaeho.backend.dto.ProductRequest;
+import com.jaeho.backend.entity.Product;
+import com.jaeho.backend.repository.ProductRepository;
+
+@Service
+public class ProductService {
+	
+	private final ProductRepository productRepository;
+	
+	public ProductService(ProductRepository productRepository) {
+		this.productRepository = productRepository;
+	}
+	
+	public Product registerProduct(ProductRequest request) {
+		
+		Product product = new Product(
+				request.getName(),
+				request.getPrice()
+				);
+		
+		return productRepository.save(product);
+	}
+}
